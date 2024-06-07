@@ -1,0 +1,173 @@
+.Eyes {
+    width: 100%;
+    border: 2px solid rgb(219, 101, 101);
+    border-radius: 3px;
+}
+
+.Contacts .Col-3 {
+    font-size: 20px;
+    line-height: 32px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(156, 73, 73);
+    text-align: center;
+    transition: 0.5S;
+    cursor: pointer;
+
+}
+
+.Contacts .Col-3:hover {
+    transform: scale(1.1);
+    transition: 0.5S;
+
+}
+
+.Contacts a:hover {
+    color: rgb(251, 25, 25);
+    transition: 0.5S;
+}
+
+a:hover {
+    color: rgb(187, 98, 98);
+    transition: 0.5S;
+}
+
+
+
+.Contacts h1 {
+    text-align: center;
+    color: rgb(155, 73, 73);
+}
+
+.Contacts p {
+    text-align: center;
+    color: brown;
+    font-size: 17px;
+}
+
+.Tel {
+    text-align: center;
+    color: brown;
+    font-size: 18px;
+    transition: 0.5;
+    text-decoration: none;
+}
+
+.Email {
+    text-align: center;
+    color: brown;
+    font-size: 18px;
+    transition: 0.5;
+    text-decoration: none;
+}
+
+.Adress {
+    text-align: center;
+    color: brown;
+    font-size: 18px;
+    transition: 0.5;
+    text-decoration: none;
+}
+
+@media (max-width: 750px) {
+
+
+    .Contacts .Col-3 {
+        font-size: 17px;
+        line-height: 32px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(156, 73, 73);
+        text-align: center;
+        transition: 0.5S;
+        cursor: pointer;
+
+    }
+
+    .Contacts h1 {
+        text-align: center;
+        color: rgb(155, 73, 73);
+        font-size: 25px;
+    }
+
+    .Contacts p {
+        text-align: center;
+        color: brown;
+        font-size: 12px;
+    }
+
+    .Tel {
+        text-align: center;
+        color: brown;
+        font-size: 15px;
+        transition: 0.5;
+        text-decoration: none;
+        line-height: 10px;
+    }
+
+    .Email {
+        text-align: center;
+        color: brown;
+        font-size: 15px;
+        transition: 0.5;
+        text-decoration: none;
+    }
+
+    .Adress {
+        text-align: center;
+        color: brown;
+        font-size: 15px;
+        transition: 0.5;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 658px) {
+    .Eyes {
+        width: 100%;
+
+    }
+
+    .Contacts .Col-3 {
+        font-size: 19px;
+        line-height: 35px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(156, 73, 73);
+        text-align: center;
+        flex: 100% 0 0;
+        margin-bottom: 25px;
+
+    }
+
+    .Contacts h1 {
+        text-align: center;
+        color: rgb(155, 73, 73);
+        font-size: 18px;
+
+    }
+
+    .Tel {
+        text-align: center;
+        color: brown;
+        font-size: 20px;
+    }
+
+    .Email {
+        text-align: center;
+        color: brown;
+        font-size: 13px;
+        transition: 0.5;
+        text-decoration: none;
+    }
+
+    .Adress {
+        font-size: 13px;
+    }
+
+    .Contacts .Col-3:hover {
+        transform: none;
+        transition: 0.5S;
+    }
+
+
+
+
+}

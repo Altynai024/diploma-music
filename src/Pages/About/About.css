@@ -1,0 +1,47 @@
+.About-me img {
+    margin: 60px;
+    width: 350px;
+    margin-top: 95px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.About h1 {
+    text-align: center;
+    color: rgb(190, 148, 10);
+    margin-top: 45px;
+    text-shadow: 0 0 10px #f2c9c9, 0 0 20px #faecec, 0 0 30px #f4bdbd, 0 0 40px #edcfcf, 0 0 50px #ffb6e2;
+}
+
+.About .Col-6 p {
+    color: rgb(128, 155, 9);
+    font-size: 20px;
+    margin: 25px;
+    text-align: justify;
+    line-height: 37px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Photo-cosmetics {
+    background-image: url(https://i.pinimg.com/564x/28/e1/93/28e193f69fc20780ad1e6c6cbd5b74ba.jpg);
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+    height: 500px;
+    margin-top: 80px;
+    color: transparent;
+}
+
+@media (max-width: 750px) {
+    .About-me img {
+        margin: 10px;
+    }
+
+    .About-me img:hover {
+        transform: none;
+        transition: none;
+    }
+
+}
