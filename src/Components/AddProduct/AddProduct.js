@@ -9,9 +9,9 @@ export default function AddProduct({ category }) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [picture, setPicture] = useState(null);
-  const [description, setDescription] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  const [video, setVideo] = useState(null);
+  const [description, setDescription] = useState(null);
   if (!user || !user.isAdmin) {
     return null;
   }
@@ -26,15 +26,17 @@ export default function AddProduct({ category }) {
     const file = event.target.files[0];
     setPicture(file);
   }
+  function onChangeVideo(event) {
+    setVideo(event.target.value);
+  }
   function onChangeDescription(event) {
     setDescription(event.target.value);
   }
-
   function onFormSubmit(event) {
     event.preventDefault();
 
     if (!picture) {
-      alert("Please upload an picture");
+      alert("Please upload an image");
       return;
     }
 
@@ -44,17 +46,17 @@ export default function AddProduct({ category }) {
         addDoc(productsCollection, {
           category: category.id,
           name: name,
-          price: Number(price),
-          picture: pictureUrl,
+          price: price,
+          video: video,
           description: description,
+          picture: pictureUrl,
           slug: name.replaceAll(" ", "-").toLowerCase(),
         })
       )
       .then(() => {
         setName("");
-        setPrice(0.0);
+        setPrice("");
         setPicture(null);
-        setDescription("");
       })
       .catch((error) => {
         console.log("Failed to add product:", error);
@@ -84,9 +86,9 @@ export default function AddProduct({ category }) {
             type="number"
             value={price}
             name="price"
-            step="any"
             onChange={onChangePrice}
             min={0}
+            step="any"
             required
           />
         </label>
@@ -100,16 +102,24 @@ export default function AddProduct({ category }) {
           />
         </label>
         <label>
-          Description:
-          <textarea
-            type=""
+          Video:
+          <input
+            type="text"
+            name="video"
+            onChange={onChangeVideo}
+            required />
+        </label>
+        <label>
+          Description: <input
+            type="text"
             name="description"
-            value={description}
             onChange={onChangeDescription}
             required
           />
         </label>
-        <button type="submit" disabled={isSubmitting}>{isSubmitting ? "Submitting..." : "Submit"}</button>
+        <button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Submitting..." : "Submit"}
+        </button>
       </form>
     </div>
   );

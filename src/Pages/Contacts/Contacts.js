@@ -1,33 +1,56 @@
-import eyes from "../../img/estetic1.jpg"
-import "./Contacts.css"
+import React, { useState } from 'react';
 
-export default function Contacts() {
-    return (
-        <div className="Container">
-            <div className="Contacts">
-                <h1>How can you contact us???</h1>
-                <div className="Row">
-                    <div className="Col-3">
-                        Our contacts: <br />
-                        <a className="Tel" target="_blank" rel="noreferrer" href="tel:+996 771 391 531">+996 771 391 531</a> <br />
-                    </div>
-                    <div className="Col-6">
-                        <img className="Eyes" src={eyes} alt="photo-eyes" />
-                    </div>
-                    <div className="Col-3">
-                        Our contacts: <br />
-                        <a className="Tel" target="_blank" rel="noreferrer" href="tel:+996 771 391 531">+996 771 391 531</a> <br />
-                    </div>
-                </div>
-                <p><strong> Our adress : </strong>  <a className="Adress" target="_blank" rel="noreferrer" href="https://www.google.com/maps?q=48.858152, 2.294433
-">101 Cosmetics street, 5th house</a></p>
+function Contacts() {
+  // Определяем состояния для данных формы
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-                <p><strong>Our email: </strong><a className="Email" target="_blank" rel="noreferrer" href="mailto:altyn024@gmail.com">
-                    altyn024@gmail.com</a></p>
+  // Обработчик отправки формы
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Ваша логика обработки формы здесь
+    console.log('Submitted:', { username, email, password });
+    // Очистка состояний после отправки формы
+    setUsername('');
+    setEmail('');
+    setPassword('');
+  };
 
-                <p>we work from  <strong> 8 a.m </strong>to <strong>10 p.m</strong> </p>
-            </div>
+  return (
+    <div>
+      <h2>Contact Us</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="username">Name:</label>
+          <input
+            type="text"
+            id="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
         </div>
-
-    )
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="password">Message:</label>
+          <textarea
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          ></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
 }
+
+export default Contacts;

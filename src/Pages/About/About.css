@@ -1,47 +1,151 @@
-.About-me img {
-    margin: 60px;
-    width: 350px;
-    margin-top: 95px;
+.company-info .About .about-text {
+    margin-top: 11px;
+    border-radius: 20px;
     display: flex;
-    flex-wrap: wrap;
-}
-
-
-.About h1 {
-    text-align: center;
-    color: rgb(190, 148, 10);
-    margin-top: 45px;
-    text-shadow: 0 0 10px #f2c9c9, 0 0 20px #faecec, 0 0 30px #f4bdbd, 0 0 40px #edcfcf, 0 0 50px #ffb6e2;
-}
-
-.About .Col-6 p {
-    color: rgb(128, 155, 9);
-    font-size: 20px;
-    margin: 25px;
-    text-align: justify;
-    line-height: 37px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.Photo-cosmetics {
-    background-image: url(https://i.pinimg.com/564x/28/e1/93/28e193f69fc20780ad1e6c6cbd5b74ba.jpg);
+    flex-direction: column;
+    background-image: url(../../img/About-2.jpg);
+    max-width: 100%;
+    height: 400px;
     background-size: cover;
-    background-position: top right;
+    align-items: center;
+    margin-bottom: 30px;
     background-repeat: no-repeat;
-    height: 500px;
-    margin-top: 80px;
-    color: transparent;
-}
-
-@media (max-width: 750px) {
-    .About-me img {
-        margin: 10px;
+    padding: 20px;
+  }
+  
+  .company-info .About h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .company-info .About p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+    background-color: rgba(151, 151, 151, 0.733);
+    padding: 10px;
+  }
+  .company-info .elementor {
+    display: flex;
+    padding: 20px 0 8px 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-top: 30px;
+    max-width: 100%;
+  }
+  
+  @media (max-width: 700px) {
+    .company-info .elementor {
+      flex-direction: column-reverse;
+      align-items: center;
     }
-
-    .About-me img:hover {
-        transform: none;
-        transition: none;
+  }
+  
+  .company-info .elementor h2 {
+    margin-top: 0;
+  }
+  .company-info .elementor .block-1 {
+    padding-right: 18px;
+    width: 50%;
+  }
+  .company-info .elementor .About-1 {
+    float: right;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .company-info .elementor div span img {
+    width: 8px;
+    margin-right: 8px;
+    margin-top: 6px;
+  }
+  .about-background {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    opacity: 0.8;
+  }
+  
+  .About-photo {
+    text-align: center;
+    margin-bottom: 20px;
+    float: right;
+    background-size: cover;
+    width: 50%;
+  }
+  
+  .box-1 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .box-1 span:first-child {
+    margin-right: 10px;
+  }
+  
+  .box-1 img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  @media (max-width: 1000px) {
+    .company-info .Main-About h2 {
+      font-size: 14px;
+      margin-bottom: 10px;
     }
-
-}
+    .company-info .Main-About p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+  }
+  @media (max-width: 850px) {
+    .company-info .Main-About h2 {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+    .company-info .Main-About p {
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+  }
+  @media (max-width: 720px) {
+    .company-info .Main-About h2 {
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    .company-info .Main-About p {
+      font-size: 10px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+  }
+  @media (max-width: 600px) {
+    .company-info .Main-About h2 {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .company-info .Main-About p {
+      font-size: 9px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+  }
+  @media (max-width: 300px) {
+    .company-info .Main-About h2 {
+      font-size: 9px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .company-info .Main-About p {
+      font-size: 9px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+  }

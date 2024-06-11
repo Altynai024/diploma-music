@@ -1,24 +1,22 @@
-.Auth {
-  white-space: nowrap;
-}
-.Auth .blueBtn {
-  background-color: #021437;
-  border: 0;
-  padding: 5px 10px;
-  color: white;
-  border-radius: 5px;
-  font-family: inherit;
-  margin-left: 7px;
-  transition: all 100ms linear;
+.Auth .signIn {
+  margin: 13px 0 0 0;
   cursor: pointer;
 }
-.Auth .blueBtn:hover {
-  background-color: #2956b1;
-}
-.Auth .icon {
-  background-color: transparent;
-  border: none;
+.Auth {
+  display: flex;
   font-size: 20px;
-  transform: translateY(3px);
-  display: none;
+  margin: 23px 0 0 0;
+  white-space: nowrap;
+}
+.Auth .signOff {
+  margin: 12px 0 0 10px;
+  cursor: pointer;
+}
+.Auth a {
+  text-decoration: none;
+}
+@media screen and (max-width: 999px) {
+  .Auth {
+    margin: 15px 0 0;
+  }
 }
