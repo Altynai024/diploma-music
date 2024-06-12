@@ -11,20 +11,21 @@
     margin-bottom: 30px;
     background-repeat: no-repeat;
     padding: 20px;
+    background-color: rgb(227, 132, 148);
   }
   
   .company-info .About h2 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
-    color: white;
+    color: rgb(233, 145, 145);
   }
   
   .company-info .About p {
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 15px;
-    color: white;
+    color: rgb(205, 117, 117);
     text-align: center;
     background-color: rgba(151, 151, 151, 0.733);
     padding: 10px;

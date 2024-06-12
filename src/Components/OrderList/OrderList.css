@@ -1,18 +1,10 @@
-.Order {
-  font-size: 20px;
-  margin-bottom: 30px;
+.OrderList .Order{
+  border: 2px solid rgb(101, 43, 43);
+  margin: 25px;
+  padding: 15px ;
+  display: inline-block;
+  border-radius: 15px;
+  background-color: rgb(251, 235, 235);
+  color: rgb(101, 43, 43);
 }
-.Order span {
-  font-weight: bold;
-  font-size: 22px;
-}
-.Order ol {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.product .product-name {
-  font-size: 30px;
-  color: palevioletred;
-}
+

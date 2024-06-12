@@ -1,23 +1,19 @@
-import "./AddToCart.css";
 import { useContext } from "react";
 import "./AddToCart.css";
 import { AppContext } from "../../App";
 
-export function AddToCart({ product }) {
+export default function AddToCart({ product }) {
   const { cart, setCart } = useContext(AppContext);
-
-  function onAddToCartClick() {
-    const qty = cart[product.id] ? cart[product.id] + 1 : 1;
+  const currentCount = cart[product.id] ? cart[product.id] : 0;
+  function onAddToCart() {
     setCart({
       ...cart,
-      [product.id]: qty,
-    });
+      [product.id]: currentCount + 1,
+    })
   }
-
   return (
     <div className="AddToCart">
-      <button onClick={onAddToCartClick}>Add to cart</button>
-      {cart[product.id] ? cart[product.id] : 0}
+      <button className="btn-add-cart" onClick={onAddToCart}>Add to cart ({currentCount})</button>
     </div>
-  );
+  ) 
 }

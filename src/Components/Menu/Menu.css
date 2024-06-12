@@ -4,9 +4,10 @@
   font-weight: 600;
   transition: 0.3s;
   border-bottom: 2px solid transparent;
+  color:rgb(13, 13, 13) ;
 }
 .Menu li:hover{
-  border-color: #333;
+  border-color: rgb(17, 16, 17);
 }
 .Foot_menu{
   width: calc(100% - 250px);

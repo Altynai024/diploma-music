@@ -1,23 +1,31 @@
 import { useContext, useState } from "react";
-import "./AddProduct.css";
 import { AppContext } from "../../App";
-import { productsCollection, uploadProductPhoto } from "../../firebase";
+import { uploadProductPhoto, productCollection } from '../../firebase';
 import { addDoc } from "firebase/firestore";
+import "./AddProduct.css";
 
 export default function AddProduct({ category }) {
   const { user } = useContext(AppContext);
   const [name, setName] = useState("");
+  const [color, setColor] = useState("");
+  const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
   const [picture, setPicture] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [video, setVideo] = useState(null);
-  const [description, setDescription] = useState(null);
+
+
   if (!user || !user.isAdmin) {
     return null;
   }
 
   function onChangeName(event) {
     setName(event.target.value);
+  }
+  function onChangeColor(event) {
+    setColor(event.target.value);
+  }
+  function onChangeDescription(event) {
+    setDescription(event.target.value);
   }
   function onChangePrice(event) {
     setPrice(event.target.value);
@@ -26,36 +34,33 @@ export default function AddProduct({ category }) {
     const file = event.target.files[0];
     setPicture(file);
   }
-  function onChangeVideo(event) {
-    setVideo(event.target.value);
-  }
-  function onChangeDescription(event) {
-    setDescription(event.target.value);
-  }
+
   function onFormSubmit(event) {
     event.preventDefault();
 
     if (!picture) {
-      alert("Please upload an image");
+      alert("Please upload an picture");
       return;
     }
 
     setIsSubmitting(true);
+
     uploadProductPhoto(picture)
       .then((pictureUrl) =>
-        addDoc(productsCollection, {
+        addDoc(productCollection, {
           category: category.id,
           name: name,
-          price: price,
-          video: video,
-          description: description,
+          color: color,
+          price: Number(price),
           picture: pictureUrl,
-          slug: name.replaceAll(" ", "-").toLowerCase(),
+          path: name.replaceAll(" ", "-").toLowerCase(),
         })
       )
       .then(() => {
         setName("");
-        setPrice("");
+        setColor("");
+        setDescription("");
+        setPrice(0);
         setPicture(null);
       })
       .catch((error) => {
@@ -63,7 +68,7 @@ export default function AddProduct({ category }) {
       })
       .finally(() => {
         setIsSubmitting(false);
-      });
+      })
   }
 
   return (
@@ -71,7 +76,7 @@ export default function AddProduct({ category }) {
       <form onSubmit={onFormSubmit}>
         <h3>Create a new product</h3>
         <label>
-          Name:
+          <p className="Name">  Name:</p>
           <input
             type="text"
             value={name}
@@ -80,45 +85,51 @@ export default function AddProduct({ category }) {
             required
           />
         </label>
+
         <label>
-          Price:
+          <p className="Name">     Color:</p>
+          <input
+            type="text"
+            value={color}
+            name="name"
+            onChange={onChangeColor}
+            required
+          />
+        </label>
+
+        <label>
+          <p className="Name">     Description:</p>
+          <textarea
+            type="text"
+            value={description}
+            name="name"
+            onChange={onChangeDescription}
+            required
+          />
+        </label>
+
+        <label>
+          <p className="Name">     Price:</p>
           <input
             type="number"
             value={price}
             name="price"
             onChange={onChangePrice}
             min={0}
-            step="any"
             required
           />
         </label>
         <label>
-          Picture:
-          <input
+          <p className="Picture">       Picture:</p>
+          <input className="Input_picture"
             type="file"
             name="picture"
             onChange={onChangePicture}
             required
           />
         </label>
-        <label>
-          Video:
-          <input
-            type="text"
-            name="video"
-            onChange={onChangeVideo}
-            required />
-        </label>
-        <label>
-          Description: <input
-            type="text"
-            name="description"
-            onChange={onChangeDescription}
-            required
-          />
-        </label>
-        <button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Submitting..." : "Submit"}
+        <button className="Button_submit" type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Submiting..." : "Submit"}
         </button>
       </form>
     </div>

@@ -1,35 +1,24 @@
-.AddToCart {
-  position: relative;
-  padding-bottom: 15px;
-}
-.AddToCart .addBtn {
-  background-color: #ffba20;
-  color: #064d54;
-  max-width: 140px;
-  width: 140px;
-  height: 40px;
-  border: none;
-  border-radius: 3px;
-  padding: 5px 5px 5px 0;
+.AddToCart .btn-add-cart {
+  display: inline-block;
+  padding: 6px 7px;
+  font-size: 15px;
   cursor: pointer;
-  font-family: "Signika Negative", sans-serif;
-  position: absolute;
-  right: 10px;
-  bottom: -30px;
-  z-index: 1;
-  transition: 0.3s;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 8px rgb(158, 100, 119);
+  color:  rgb(245, 235, 238);
+  background-color: rgb(201, 129, 153);
+  transition: 0.5S;
 }
-.AddToCart .addBtn:hover {
-  background-color: #ffcb58;
-  box-shadow: 0 0 5px #f7b42f, 0 0 20px #fdd832, 0 0 30px #f8f8a6;
+.btn-add-cart:hover{
+  text-align: center;
+  background-color:  rgb(223, 169, 187);
+  box-shadow: 0 8px rgb(186, 136, 153); 
 }
-.AddToCart span {
-  position: absolute;
-  right: 30px;
-  bottom: -10px;
-}
-.AddToCart i {
-  position: absolute;
-  bottom: 18px;
-  right: 10px;
-}
+.btn-add-cart:active {
+  background-color:  rgb(201, 129, 153);
+  box-shadow: 0 6px  rgb(158, 100, 119);
+  transform: translateY(4px);
+}                                                                                                                                                                                                                                                                                     

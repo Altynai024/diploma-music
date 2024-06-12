@@ -1,63 +1,295 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Tinos&display=swap");
+.CartList {
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
 
 .CartList .CartItem {
+  padding: 40px 170px;
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  border: 3px solid sandybrown;
-  border-radius: 7px;
-  margin: 9px 0;
-  transition: 0.2s;
-}
-.CartList .CartItem:hover {
-  background-color: rgb(214, 228, 240);
-}
-.CartList .CartItem img {
-  width: 80px;
-  border-radius: 4px 0px 0px 4px;
-}
-.button {
-  background-color: rgb(160, 148, 95);
-  width: 110px;
-  height: 40px;
-  border: transparent;
-  color: white;
-  border-radius: 8px;
-  margin-left: 5px;
-  transition: 0.2s;
-}
-.button:hover {
-  background-color: rgba(160, 157, 95, 0.552);
-}
-.Remove {
-  font-family: "blue", sans-serif;
-  font-size: 20px;
-}
-.link {
-  text-decoration: none;
-  font-family: "Open sans", sans-serif;
-  color: #000;
-  transition: all 0.3s ease;
-  font-weight: 700;
+  border: 1px solid rgb(158, 104, 104);
+  border-radius: 15px;
+  margin: 25px 50px;
+  flex-wrap: wrap;
+  box-shadow: 10px 5px 5px 5px rgb(240, 227, 227);
+  background-color: white;
+  transition: 0.5s;
 }
 
-.link:hover {
-  color: rgb(255, 221, 0);
+.CartList .CartItem img {
+  width: 150px;
 }
-.price-in-product {
-  margin-left: 10px;
-  font-family: "Open sans", sans-serif;
-  font-weight: 700;
+
+.Picture {
+  margin-left: -70px;
+  margin-right: 0px;
 }
-.input-in-CartList {
-  width: 50px;
-  background-color: rgb(159, 160, 95);
-  margin-left: 20px;
-  color: #ffffff;
-  font-family: "Open sans", sans-serif;
-  font-weight: 700;
+
+
+.Delete_icon {
+  max-width: 70px;
+  margin-top: 0px;
+  cursor: pointer;
+}
+
+
+.CartList input {
+  border: 1px solid rgb(158, 104, 104);
   border-radius: 5px;
-  border: transparent;
+  padding: 5px 8px;
+  margin-top: 40px;
+  margin-left: 30px;
+  margin-right: 25px;
+  background-color: transparent;
+  margin-bottom: 40px;
+  max-width: 20px;
+
 }
-.input-in-CartList:hover {
-  background-color: rgba(160, 153, 95, 0.552);
+
+.CartList a {
+  color: rgb(158, 104, 104);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+  max-width: 50px;
+}
+
+.CartList .Product_price {
+  color: rgb(196, 128, 128);
+  font-family: cursive;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 40px;
+}
+
+.ProductSlug {
+  max-width: 45px;
+  flex-wrap: wrap;
+  margin-right: 40px;
+  margin-left: 20px;
+  width: 35%;
+  text-align: center;
+}
+
+.InputButton button {
+  margin-left: 20px;
+  color: white;
+  background-color: rgb(211, 144, 144);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.InputButton button:hover {
+  background-color: rgb(188, 125, 125);
+  color: rgb(245, 242, 242);
+}
+
+.CartItem input {
+  max-width: 50px;
+  outline: none;
+  cursor: pointer;
+  color: brown;
+  font-size: 14px;
+  max-width: 10%;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+
+}
+
+
+@media screen and (max-width:951px) {
+  .CartList .CartItem {
+      padding: 15px 60px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      border: 1px solid rgb(158, 104, 104);
+      border-radius: 15px;
+      margin: 25px 50px;
+      flex-wrap: wrap;
+      box-shadow: 10px 5px 5px 5px rgb(240, 227, 227);
+      background-color: white;
+      transition: 0.5s;
+  }
+
+  .CartList .CartItem img {
+      width: 120px;
+
+  }
+
+  .Picture {
+      margin-left: 10px;
+      margin-right: 0px;
+  }
+
+
+  .Delete_icon {
+      max-width: 50px;
+      margin-top: 0px;
+      cursor: pointer;
+
+  }
+
+
+  .CartList input {
+      border: 1px solid rgb(158, 104, 104);
+      border-radius: 5px;
+      padding: 5px 8px;
+      background-color: transparent;
+      margin-bottom: 40px;
+      max-width: 50px;
+
+  }
+
+  .CartList a {
+      color: rgb(158, 104, 104);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 18px;
+      text-align: center;
+      max-width: 50px;
+  }
+
+}
+
+
+@media screen and (max-width:728px) {
+  .CartList .CartItem {
+      padding: 5px 20px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      border: 1px solid rgb(158, 104, 104);
+      border-radius: 15px;
+      margin: 25px 50px;
+      flex-wrap: wrap;
+      box-shadow: 10px 5px 5px 5px rgb(240, 227, 227);
+      background-color: white;
+      transition: 0.5s;
+  }
+
+  .CartList .CartItem img {
+      width: 100px;
+
+  }
+
+  .Picture {
+      margin-left: 10px;
+      margin-right: 0px;
+  }
+
+
+  .Delete_icon {
+      max-width: 50px;
+      margin-top: 0px;
+      cursor: pointer;
+
+  }
+
+
+  .CartList input {
+      border: 1px solid rgb(158, 104, 104);
+      border-radius: 5px;
+      padding: 5px 8px;
+      background-color: transparent;
+      margin-bottom: 40px;
+      max-width: 20px;
+
+  }
+
+  .CartList a {
+      color: rgb(158, 104, 104);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 18px;
+      text-align: center;
+      max-width: 50px;
+  }
+
+  .CartList .Product_price {
+      color: rgb(196, 128, 128);
+      font-family: cursive;
+      font-weight: 700;
+      padding: 15px;
+      font-size: 20px;
+
+  }
+
+  .ProductSlug {
+      max-width: 45px;
+      flex-wrap: wrap;
+
+  }
+
+  .InputButton button {
+      margin-left: 20px;
+      color: white;
+      background-color: rgb(211, 144, 144);
+      cursor: pointer;
+      transition: 0.5s;
+  }
+
+  .InputButton button:hover {
+      background-color: rgb(188, 125, 125);
+      color: rgb(245, 242, 242);
+  }
+
+  .CartItem input {
+      max-width: 50px;
+      outline: none;
+      cursor: pointer;
+      color: brown;
+      font-size: 14px;
+      max-width: 20%;
+  }
+
+}
+
+@media screen and (max-width:415px) {
+  .CartList .CartItem {
+      padding: 1px 10px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      border: 1px solid rgb(158, 104, 104);
+      border-radius: 15px;
+      margin: 25px 50px;
+      flex-wrap: wrap;
+      box-shadow: 10px 5px 5px 5px rgb(240, 227, 227);
+      background-color: white;
+      transition: 0.5s;
+  }
+
+  .CartList a {
+      color: rgb(158, 104, 104);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 13px;
+      text-align: center;
+      max-width: 50px;
+  }
+
+  .CartList .Product_price {
+      color: rgb(196, 128, 128);
+      font-family: cursive;
+      font-weight: 700;
+      padding: 1px;
+      font-size: 15px;
+
+  }
+
+  .CartItem input {
+      max-width: 50px;
+      outline: none;
+      cursor: pointer;
+      color: brown;
+      font-size: 10px;
+      max-width: 20%;
+  }
+
 }

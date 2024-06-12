@@ -1,48 +1,72 @@
-.OrderForm {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.521);
-  z-index: 1000;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-
-  transition: all 150ms linear;
-}
-.OrderForm.active {
-  opacity: 1;
-  pointer-events: all
-}
-.popup {
-  padding: 20px 50px;
-  background-color: white;
-}
-
-.popup form {
+.OrderForm form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  background-color: rgb(227, 172, 172);
 }
-.popup form input {
-  width: 100%;
-  height: 40px;
-  margin: 10px;
-  font-size: 20px;
-  border: none;
-  padding-left: 10px;
-  border: 1px solid rgba(0,0,0,0.3);
+
+.OrderForm input {
+  background-color: rgb(251, 245, 247);
+  border: 1px solid rgb(194, 164, 164);
+  border-radius: 10px;
+  padding: 12px;
+  margin: 5px;
+  color: brown;
 }
-.popup form label{
-  margin-bottom: 10px;
+
+.OrderForm input:focus {
+  outline: none;
 }
-.popup .Btn{
-  margin-top: 15px;
+
+.OrderForm span {
+  color: rgb(251, 245, 247);
   display: block;
+  font-weight: 600;
+}
+
+.OrderForm h3 {
+  color: rgb(251, 245, 247);
+}
+
+.OrderForm button {
+  color: white;
+  margin-bottom: 50px;
+  margin-top: 25px;
+  padding: 8px 30px;
+  background-color: rgb(196, 115, 115);
+  border: 1px solid rgb(230, 135, 135);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+
+
+.OrderForm button:hover {
+  background-color: rgb(168, 101, 101);
+  border: 1px solid rgb(119, 41, 41);
+  color: rgb(249, 244, 244);
+}
+
+.OrderForm img {
+  border-radius: 50px;
+  border: 1px solid brown;
+}
+
+
+.Please {
+  color: white;
+  font-weight: 700;
+  padding: 20px;
   text-align: center;
+  background-color: rgb(233, 153, 153);
+  font-size: 22px;
+}
+
+.Empty {
+  text-align: center;
+  height: 800px;
+  font-size: 25px;
+  padding-top: 50px;
+  color: brown;
+  font-weight: 600;
 }

@@ -1,47 +1,30 @@
 import { NavLink } from "react-router-dom";
-import { useContext, useState } from "react";
-import { AppContext } from "../../App";
 import "./CategoryList.css";
+import { useContext } from "react";
+import { AppContext } from "../../App";
 import AddCategory from "../AddCategory/AddCategory";
-// import DeleteCategory from "../../Components/DeleteCategory";
+import DeleteCategory from "../DeleteCategory/DeleteCategory";
+
 
 export default function CategoryList() {
-  const { categories } = useContext(AppContext);
-
-  const output = categories.map((category) => (
-    <li className="item" key={category.id}>
-      <NavLink className="links" to={"/categories/" + category.slug}>
-        {category.name}
-      </NavLink>
-      {/* <DeleteCategory category={category} /> */}
-    </li>
-  ));
-
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseLeave = () => {
-    setIsHovered(true);
-  };
-
-  return (
-    <div className="CategoryList">
-      <div
-        className={`aside_nav ${isHovered ? "hovered" : ""}`}
-        onMouseLeave={handleMouseLeave}
-      >
-        <i className="fa-solid fa-bars fa-beat fa-xl"></i>
-        <h2>Categories</h2>
-        <nav>
-          <h3>Categories</h3>
-          <ul>{output}</ul>
-          <AddCategory />
-        </nav>
-      </div>
-      <div className="mini_nav">
-        <h3>Categories</h3>
-        <ul>{output}</ul>
-        <AddCategory />
-      </div>
-    </div>
-  );
-}
+    const { categories } = useContext(AppContext);
+    categories.sort((a, b) => b.weight - a.weight)
+    const output = categories.sort((a, b) => a.weight - b.weight).map(category => (
+        <li key={category.id}>
+            <NavLink className="Category" to={'/categories/' + category.slug}>
+                <img src={category.picture} alt={category.name} />
+                {category.name}
+            </NavLink>
+            <DeleteCategory category={category} />
+        </li>
+    ));
+    return (
+        <div className="CategoryList">
+            <p>CATEGORY</p>
+            <ul>
+                {output}
+            </ul>
+            <AddCategory />
+        </div>
+    )
+};

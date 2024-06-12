@@ -1,30 +1,39 @@
-import { useContext } from "react";
-import { useMatch } from "react-router-dom"
+
 import { AppContext } from "../../App";
 import NotFound from "../NotFound/NotFound";
-import { AddToCart } from "../../Components/AddToCart/AddToCart";
+import AddToCart from '../../Components/AddToCart/AddToCart';
+import { useContext } from "react";
+import { NavLink, useMatch } from "react-router-dom";
+import "./Product.css"
+
+
+
+
 
 export default function Product() {
-  const { params } = useMatch("/products/:slug");
+  const { params } = useMatch("/product/:path");
   const { products } = useContext(AppContext);
+  const product = products.find(product => product.path === params.path);
 
-  const product = products.find(product => product.slug === params.slug);
 
   if (!product) {
-    return <NotFound />
+    return <NotFound />;
   }
-
   return (
-    <div className="Product">
-      <div>
-        <img src={product.picture} alt={product.name} />
-      </div>
-      <div>
+    <div className="Container">
+      <div className="Productt">
         <h1>{product.name}</h1>
-        <p><strong>Price:</strong> {product.price}$</p>
-        <p><strong>Description: </strong>{product.description}</p>
-        <AddToCart product={product} />
+        <div className="Picture-des">
+          <img width={250} height={250} src={product.picture} alt={product.name} />
+          <div className="Des-price-button">
+            <p>{product.description}</p>
+            <div className="Price-button">
+              <strong> <span>{product.price} $</span></strong>
+              <AddToCart product={product} />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  )
+  );
 }

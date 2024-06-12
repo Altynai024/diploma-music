@@ -1,22 +1,64 @@
-.Auth .signIn {
-  margin: 13px 0 0 0;
-  cursor: pointer;
-}
-.Auth {
-  display: flex;
-  font-size: 20px;
-  margin: 23px 0 0 0;
-  white-space: nowrap;
-}
-.Auth .signOff {
-  margin: 12px 0 0 10px;
-  cursor: pointer;
-}
 .Auth a {
   text-decoration: none;
+  color: rgb(129, 34, 34);
+  font-size: 15px;
+  line-height: 1;
+
+  padding: 5px 0;
+  white-space: nowrap;
 }
-@media screen and (max-width: 999px) {
-  .Auth {
-    margin: 15px 0 0;
+
+.Link .Align {
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+.Auth .S-Out-Btn {
+  background-color: rgb(171, 33, 33);
+}
+
+.Auth .Btn-s {
+  justify-content: space-between;
+  display: flex;
+}
+
+.img-container img {
+  width: 40px;
+  border-radius: 25px;
+  display: flex;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: 0.3s;
+  margin-right: -6px;
+
+}
+
+.img-container img:hover {
+  box-shadow: 0px 0px 15px 1px rgb(190, 137, 137);
+}
+
+.LogOut-img img {
+  width: 40px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-right: -6px;
+  border: 1px solid rgb(83, 79, 79);
+  transition: 0.3s;
+}
+
+.LogOut-img img:hover {
+  box-shadow: 0px 0px 15px 1px rgb(193, 154, 154);
+}
+
+.img-container {
+  position: relative;
+}
+
+@media (max-width: 375px) {
+  .img-container img {
+      margin: 0 3px;
   }
 }

@@ -1,46 +1,42 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { AppContext } from "../../App";
 import "./CartList.css";
+import { useContext } from "react";
+import { AppContext } from "../../App";
+import { Link } from "react-router-dom";
+import "./CartList.css";
+import musorkaa from "../../img/musorkaa.png";
 
 export default function CartList() {
+  // получить продукты и содердижимое корзины
   const { products, cart, setCart } = useContext(AppContext);
 
-  function onQuantityChange(product, qty) {
+  function onQtyChange(product, qty) {
     setCart({
       ...cart,
       [product.id]: qty,
     });
   }
-  function onItemRemove(product) {
+  function onRemoveClick(product) {
     const newCart = { ...cart };
     delete newCart[product.id];
     setCart(newCart);
   }
-
   const productIds = Object.keys(cart);
-
   const output = products
     .filter((product) => productIds.includes(product.id))
     .map((product) => (
-      <div className="CartItem" key={product.id}>
-        <img src={product.picture} alt={product.name} />
-        <Link className="link" to={"/product/" + product.slug}>
-          {product.name}
-        </Link>
-        <input
-          className="input-in-CartList"
-          type="number"
-          value={cart[product.id]}
-          min={1}
-          onChange={(event) => onQuantityChange(product, +event.target.value)}
-        />
-        <span className="price-in-product">
-          {cart[product.id] * product.price} Dollar
-        </span>
-        <button className="button" onClick={() => onItemRemove(product)}>
-          <span className="Remove">Remove</span>
-        </button>
+      <div className="Container">
+        <div className="CartItem">
+          <p className="Picture"> <img src={product.picture} alt={product.name} /></p>
+          <Link className="ProductSlug" to={`/products/` + product.slug}> {product.name}</Link>
+          <input
+            type="number"
+            min={1}
+            onChange={(event) => onQtyChange(product, +event.target.value)}
+            value={cart[product.id]}
+          />
+          <span className="Product_price" >{product.price * cart[product.id]} $</span>
+          <img className="Delete_icon" onClick={() => onRemoveClick(product)} src={musorkaa} alt="remove" />
+        </div>
       </div>
     ));
 

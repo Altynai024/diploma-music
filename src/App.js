@@ -9,7 +9,7 @@ import NotFound from "./Pages/NotFound/NotFound";
 import { createContext, useEffect, useState } from "react";
 import { onAuthChange, onCategoriesLoad, onOrdersLoad, onProductsLoad } from "./firebase";
 import Product from "./Pages/Product/Product";
-import { Cart } from "./Pages/Cart/Cart";
+import Cart from "./Pages/Cart/Cart";
 import ThankYou from "./Pages/ThankYou/ThankYou";
 import Orders from "./Pages/Orders/Orders";
 
@@ -42,7 +42,7 @@ function App() {
     onOrdersLoad(setOrders);
 
     onAuthChange(user => {
-      if(user) {
+      if (user) {
         user.isAdmin = user && user.email === "altynazim024@gmail.com";
       }
 
@@ -56,19 +56,21 @@ function App() {
     <div className="App">
       <AppContext.Provider value={{ categories, products, cart, setCart, user, orders }} >
         <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contacts" element={<Contacts />} />
-            <Route path="/delivery" element={<Delivery />} />
-            <Route path="/categories/:slug" element={<Category />} />
-            <Route path="/products/:slug" element={<Product />} />
-            <Route path="/thank-you" element={<ThankYou />} />
-            <Route path="/orders" element={<Orders />} />
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contacts" element={<Contacts />} />
+              <Route path="/delivery" element={<Delivery />} />
+              <Route path="/categories/:slug" element={<Category />} />
+              <Route path="/products/:slug" element={<Product />} />
+              <Route path="/thank-you" element={<ThankYou />} />
+              <Route path="/orders" element={<Orders />} />
 
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
         </Layout>
       </AppContext.Provider>
     </div>

@@ -1,56 +1,35 @@
-import React, { useState } from 'react';
 
-function Contacts() {
-  // Определяем состояния для данных формы
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+import "./Contacts.css"
 
-  // Обработчик отправки формы
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Ваша логика обработки формы здесь
-    console.log('Submitted:', { username, email, password });
-    // Очистка состояний после отправки формы
-    setUsername('');
-    setEmail('');
-    setPassword('');
-  };
+export default function Contacts() {
+    return (
+        <div className="Container">
+            <div className="Contacts">
+                <h1>How can you contact us???</h1>
+                <div className="Row">
+                    <div className="Col-3">
+                        Our contacts: <br />
+                        <a className="Tel" target="_blank" rel="noreferrer" href="tel:+996 555 27 09 04">+996 220 112 602 </a> <br />
+                        <a className="Tel" target="_blank" rel="noreferrer" href="tel:+996 555 27 09 04">+996 771 391 531 </a>
+                    </div>
+                    {/* <div className="Col-6">
+                        <img className="Eyes" src={eyes} alt="photo-eyes" />
+                    </div> */}
+                    {/* <div className="Col-3">
+                        Our contacts: <br />
+                        <a className="Tel" target="_blank" rel="noreferrer" href="tel:+996 555 27 09 04">+996 220 112 602 </a> <br />
+                        <a className="Tel" target="_blank" rel="noreferrer" href="+996 555 27 09 04">+996 771 391 531 </a>
+                    </div> */}
+                </div>
+                <p><strong> Our adress : </strong>  <a className="Adress" target="_blank" rel="noreferrer" href="https://www.google.com/maps?q=48.858152, 2.294433
+"></a></p>
 
-  return (
-    <div>
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Name:</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
+                <p><strong>Our email: </strong><a className="Email" target="_blank" rel="noreferrer" href="mailtoaltynaia@gmail.com">
+                    altynaia@gmail.com</a></p>
+
+                <p>we work from  <strong> 8 a.m </strong>to <strong>10 p.m</strong> </p>
+            </div>
         </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Message:</label>
-          <textarea
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          ></textarea>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  );
+
+    )
 }
-
-export default Contacts;
